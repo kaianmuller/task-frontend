@@ -32,7 +32,7 @@ export class TaskService {
     return this.http.get<any>(this.URL)
     .toPromise()
     .then(res => <Task[]>res.data)
-    .then(data => { return data; });
+    .then(data => { console.log(data);return data; });
 }
 
   // Obtener una sola tarea

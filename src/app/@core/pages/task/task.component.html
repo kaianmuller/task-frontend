@@ -1,88 +1,30 @@
-<p-toast></p-toast>
-
-<div class="card">
-<h5>Lista de tareas</h5>
-    <p-table [value]="task2" dataKey="id" editMode="row">
-        <ng-template pTemplate="header">
-            <tr>
-                <th style="width:5rem">ID</th>
-                <th>Título</th>
-                <th><span>Fecha Creación</span></th>
-                <th>Descripción</th>
-                <th>Nivel de Prioridad</th>
-                <th>Estado</th>
-                <th style="width:4rem">Editar</th>
-            </tr>
-        </ng-template>
-
-        <ng-template pTemplate="body" let-task let-editing="editing" let-ri="rowIndex">
-            <tr [pEditableRow]="task">
-                <td>
-                    <p-cellEditor>
-                        <ng-template pTemplate="input">
-                            <input pInputText type="text" [(ngModel)]="task.id">
-                        </ng-template>
-                        <ng-template pTemplate="output">
-                            {{task.id}}
-                        </ng-template>
-                    </p-cellEditor>
-                </td>
-                <td>
-                    <p-cellEditor>
-                        <ng-template pTemplate="input">
-                            <input pInputText type="text" [(ngModel)]="task.titulo" required>
-                        </ng-template>
-                        <ng-template pTemplate="output">
-                            {{task.titulo}}
-                        </ng-template>
-                    </p-cellEditor>
-                </td>
-                <td>
-                    <p-cellEditor>
-                        <ng-template pTemplate="input">
-                            <input pInputText type="text" [(ngModel)]="task.fechaCreacion" required>
-                        </ng-template>
-                        <ng-template pTemplate="output">
-                            {{task.fechaCreacion}}
-                        </ng-template>
-                    </p-cellEditor>
-                </td>
-                <td>
-                    <p-cellEditor>
-                        <ng-template pTemplate="input">
-                            <input pInputText type="text" [(ngModel)]="task.descripcion" required>
-                        </ng-template>
-                        <ng-template pTemplate="output">
-                            {{task.descripcion}}
-                        </ng-template>
-                    </p-cellEditor>
-                </td>
-                <td>
-                    <p-cellEditor>
-                        <ng-template pTemplate="input">
-                            <p-dropdown [(ngModel)]="task.nivelPrioridad" [style]="{'width':'100%'}"></p-dropdown>
-                        </ng-template>
-                        <ng-template pTemplate="output">
-                            {{task.nivelPrioridad}}
-                        </ng-template>
-                    </p-cellEditor>
-                </td>
-                <td>
-                    <p-cellEditor>
-                        <ng-template pTemplate="input">
-                            <input pInputText type="text" [(ngModel)]="task.status">
-                        </ng-template>
-                        <ng-template pTemplate="output">
-                            {{task.status}}
-                        </ng-template>
-                    </p-cellEditor>
-                </td>
-                <td style="text-align:center">
-                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(task)" class="p-button-rounded p-button-text"></button>
-                    <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(task)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
-                    <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(task, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
+<div id="page">
+    <div id="panel-superior">
+        <button id="new-task">Nueva Tarea</button>
+    </div>
+    <div id="table">
+        <div id="table-head">
+            <div class="td" id="head-id"><p>ID</p></div>
+            <div class="td" id="head-titulo" ><p>TITULO</p></div>
+            <div class="td" id="head-fecha"><p>FECHA CREACION</p></div>
+            <div class="td" id="head-descripcion"><p>DESCRIPCION</p></div>
+            <div class="td" id="head-prioridad"><p>PRIORIDAD</p></div>
+            <div class="td" id="head-status"><p>STATUS</p></div>
+            <div class="td" id="head-subtasks"></div>
+            <div class="td" id="head-opciones"></div>
+        </div>
+        <div id="table-body">
+            <div class="tr" *ngFor="let task of tasks">
+                <div class="td" id="body-id"><p>{{task.id}}</p></div>
+                <div class="td" id="body-titulo"><p>{{task.titulo}}</p></div>
+                <div class="td" id="body-fecha"><p>{{task.fechaCreacion}}</p></div>
+                <div class="td" id="body-descripcion"><p>{{task.descripcion}}</p></div>
+                <div class="td" id="body-prioridad"><p>{{task.nivelPrioridad}}</p></div>
+                <div class="td" id="body-status"><p>{{task.status}}</p></div>
+                <div class="td" id="body-subtasks"><button> Sub-tareas</button></div>
+                <div class="td" id="body-opciones"><button>Editar</button><button>Eliminar</button></div>
+            </div>
+        </div>
+    </div>
 </div>
+<app-modal-new-task>

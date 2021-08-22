@@ -1,4 +1,125 @@
-:host ::ng-deep .p-cell-editing {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+#page{
+    width: 100%;
+    height: 100%;
+    }
+
+#panel-superior{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#table{
+    width: 100%;
+    height: 400px;
+}
+
+
+#table-head{
+width: 100%;
+height: 30px;
+display: flex;
+flex-direction: row;
+background-color: bisque;
+}
+
+#table-body{
+width: 100%;
+}
+
+#table-body .tr{
+width: 100%;
+height: 80px;
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.td{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+}
+
+
+
+
+
+
+
+
+#head-id,#body-id{
+ width: 50%;
+ display: flex;
+}
+
+
+
+#head-titulo,#body-titulo{
+width: 100%;   
+}
+
+
+#head-fecha,#body-fecha{
+width: 70%;
+}
+
+
+
+#head-descripcion,#body-descripcion{
+ width: 150%;
+}
+
+
+
+#head-prioridad,#body-prioridad{
+ width: 50%;
+}
+
+
+#head-status,#body-status{
+width: 50%;
+}
+
+#head-subtasks,#body-subtasks{
+width: 100%;
+}
+
+#head-opciones,#body-opciones{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+
+
+
+p{
+font-size: 15px;
+text-align: center;
+}
+
+
+button{
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border-style: none;
+    border-radius: 3px;
+    border: solid 1px;
+    margin: 2px;
+    background-color: floralwhite;
+    transition: 0.2s ease-in;
+}
+
+
+button:hover{
+    background-color: aquamarine;   
+}
+
+button:active{
+    transform: scale(1.05);
 }
