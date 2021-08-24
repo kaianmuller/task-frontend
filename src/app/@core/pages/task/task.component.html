@@ -1,6 +1,7 @@
 <div id="page">
     <div id="panel-superior">
-        <button id="new-task">Nueva Tarea</button>
+        <label>TASKS</label>
+        <button id="new-task" (click)="statusModalTask = true">Nueva Tarea</button>
     </div>
     <div id="table">
         <div id="table-head">
@@ -11,7 +12,7 @@
             <div class="td" id="head-prioridad"><p>PRIORIDAD</p></div>
             <div class="td" id="head-status"><p>STATUS</p></div>
             <div class="td" id="head-subtasks"></div>
-            <div class="td" id="head-opciones"></div>
+            <div class="td" id="head-opciones">OPCIONES</div>
         </div>
         <div id="table-body">
             <div class="tr" *ngFor="let task of tasks">
@@ -21,10 +22,12 @@
                 <div class="td" id="body-descripcion"><p>{{task.descripcion}}</p></div>
                 <div class="td" id="body-prioridad"><p>{{task.nivelPrioridad}}</p></div>
                 <div class="td" id="body-status"><p>{{task.status}}</p></div>
-                <div class="td" id="body-subtasks"><button> Sub-tareas</button></div>
-                <div class="td" id="body-opciones"><button>Editar</button><button>Eliminar</button></div>
+                <div class="td" id="body-subtasks"><button id="sub-tasks" (click)="navegarSubtareas(task.id)"> Sub-tareas</button></div>
+                <div class="td" id="body-opciones"><button id="edit-task" (click)="editarTask(task)">Editar</button><button id="del-task" (click)="eliminarTask(task.id)">Eliminar</button></div>
             </div>
         </div>
     </div>
 </div>
-<app-modal-new-task>
+
+
+<app-modal-new-task *ngIf="statusModalTask" [edit]="editar" [editTask]="editTask" (cerrarModal)="cerrarModal();actualizarLista()">

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  URL_API: 'http://localhost:3000/task'
+  URL_TASK_API: 'http://localhost:3000/task',
+  URL_SUBTASK_API: 'http://localhost:3000/subtask'
 };
 
 /*

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TaskComponent } from './task.component';
 import { TaskService } from '../../services/task.service';
 import { ModalNewTaskComponent } from './components/modal-new-task/modal-new-task.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ModalNewTaskComponent } from './components/modal-new-task/modal-new-tas
     ModalNewTaskComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [
     TaskService,

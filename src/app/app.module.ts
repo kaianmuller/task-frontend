@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskModule } from './@core/pages/task/task.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SubtaskModule } from './@core/pages/subtask/subtask.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     AppRoutingModule,
     TaskModule,
+    SubtaskModule,
     HttpClientModule
   ],
   providers: [],

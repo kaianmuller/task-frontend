@@ -3,23 +3,25 @@
     height: 100%;
     }
 
-#panel-superior{
-    width: 100%;
-    height: 60px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-#panel-superior label{
-    text-align: left;
-    margin-bottom: 5px;
-}
+    #panel-superior{
+        width: 100%;
+        height: 60px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    #panel-superior label{
+        text-align: left;
+        margin-bottom: 5px;
+    }
 
 #new-task{
-    background-color: lightgreen;
+background-color: lightgreen;
 }
+
+
 
 #table{
     width: 100%;
@@ -100,10 +102,6 @@ width: 50%;
 width: 100%;
 }
 
-#sub-tasks{
-    background-color: yellow;
-}
-
 #head-opciones,#body-opciones{
     width: 100%;
     display: flex;
@@ -111,14 +109,17 @@ width: 100%;
     }
 
 
-#edit-task{
-    background-color: lightblue;
-}
+    
+    #edit-task{
+        background-color: lightblue;
+    }
+    
+    #del-task{
+        background-color: rgb(207, 38, 38);
+        color:white;
+    }
 
-#del-task{
-    background-color: rgb(207, 38, 38);
-    color:white;
-}
+
 
 
 p{
@@ -133,7 +134,7 @@ label{
 
 
 button{
-    width: 100px;
+    width: 150px;
     height: 30px;
     outline: none;
     border-style: none;

@@ -1,13 +1,13 @@
 <div id="page">
     <div id="panel">
         <div id="topBar">
-            <label id="title">Nueva Tarea</label>
+            <label id="title">Nueva Sub-Tarea</label>
             <button id="btnCerrar" (click)="cerrarVentana()">X</button>
         </div>
         <div id="panel-formulario">
-        <form  [formGroup]="taskForm" (ngSubmit)="enviarFormulario($event)">
+        <form  [formGroup]="subtaskForm" (ngSubmit)="enviarFormulario($event)">
             <div id="id" *ngIf="edit">
-                <label>ID: {{localTask.id}}</label>
+                <label>ID: {{localSubtask.id}}</label>
             </div>
             <div id="titulo">
                 <label>TITULO</label>

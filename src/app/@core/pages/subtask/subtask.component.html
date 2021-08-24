@@ -1,0 +1,35 @@
+
+<div id="page">
+    <div id="panel-superior">
+        <label>SUB-TASKS</label>
+        <div>
+        <button id="new-task" (click)="statusModalSubtask = true">Nueva Sub-Tarea</button>
+        <button id="back-task" (click)="navegarTareas()">Volver</button>
+        </div>
+    </div>
+    <div id="table">
+        <div id="table-head">
+            <div class="td" id="head-id"><p>ID</p></div>
+            <div class="td" id="head-titulo" ><p>TITULO</p></div>
+            <div class="td" id="head-fecha"><p>FECHA CREACION</p></div>
+            <div class="td" id="head-descripcion"><p>DESCRIPCION</p></div>
+            <div class="td" id="head-prioridad"><p>PRIORIDAD</p></div>
+            <div class="td" id="head-status"><p>STATUS</p></div>
+            <div class="td" id="head-opciones">OPCIONES</div>
+        </div>
+        <div id="table-body">
+            <div class="tr" *ngFor="let subtask of subtasks">
+                <div class="td" id="body-id"><p>{{subtask.id}}</p></div>
+                <div class="td" id="body-titulo"><p>{{subtask.titulo}}</p></div>
+                <div class="td" id="body-fecha"><p>{{subtask.fechaCreacion}}</p></div>
+                <div class="td" id="body-descripcion"><p>{{subtask.descripcion}}</p></div>
+                <div class="td" id="body-prioridad"><p>{{subtask.nivelPrioridad}}</p></div>
+                <div class="td" id="body-status"><p>{{subtask.status}}</p></div>
+                <div class="td" id="body-opciones"><button id="edit-task" (click)="editarSubtask(subtask)">Editar</button><button id="del-task" (click)="eliminarSubtask(subtask.id)">Eliminar</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-modal-new-subtask *ngIf="statusModalSubtask" [taskid]="taskId" [edit]="editar" [editSubtask]="editSubtask" (cerrarModal)="cerrarModal();actualizarLista()">
